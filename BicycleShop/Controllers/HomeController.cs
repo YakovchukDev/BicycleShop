@@ -11,16 +11,15 @@ namespace BicycleShop.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        BicycleContext context;
+        public HomeController(BicycleContext context)
         {
-            _logger = logger;
+            this.context = context;
         }
 
         public IActionResult Index()
         {
-            return View();
+            return View(context.Bicycles.ToList());
         }
 
         public IActionResult Privacy()
