@@ -9,6 +9,7 @@ namespace BicycleShop.Models
     public class BicycleContext : DbContext
     {
         public DbSet<Bicycle> Bicycles { get; set; }
+        public DbSet<Order> Orders { get; set; }
         public BicycleContext(DbContextOptions<BicycleContext> options) : base(options)
         {
             Database.EnsureCreated();

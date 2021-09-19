@@ -3,26 +3,19 @@
     ViewData["Title"] = "Home Page";
 }
 
-<table>
+<table class="table table-sm">
     <thead>
         <tr>
-            <th>Title</th>
-            <th>  |  </th> 
-            <th>Brand</th>
-            <th>  |  </th>
-            <th>Price</th>
-            <th>  |  </th>
-            <th>Class</th>
-            <th>  |  </th>
-            <th>Wheels</th>
-            <th>  |  </th>
-            <th>Frame</th>
-            <th>  |  </th>
-            <th>Color</th>
-            <th>  |  </th>
-            <th>Year of issue</th>
-            <th>  |  </th>
-            <th>Saddle</th>
+            <th class="table-dark" scope="col">Title</th>
+            <th class="table-dark" scope="col">Brand</th>
+            <th class="table-dark" scope="col">Price</th>
+            <th class="table-dark" scope="col">Class</th>
+            <th class="table-dark" scope="col">Wheels</th>
+            <th class="table-dark" scope="col">Frame</th>
+            <th class="table-dark" scope="col">Color</th>
+            <th class="table-dark" scope="col">Year of issue</th>
+            <th class="table-dark" scope="col">Saddle</th>
+            <th class="table-dark" scope="col">Buy</th>
         </tr>
     </thead>
     <tbody>
@@ -30,23 +23,18 @@
         {
             <tr>
                 <td>@bicycle.Title</td>
-                <th>|</th>
                 <td>@bicycle.Brand</td>
-                <th>|</th>
                 <td>@bicycle.Price</td>
-                <th>|</th>
                 <td>@bicycle.Class</td>
-                <th>|</th>
                 <td>@bicycle.Wheels</td>
-                <th>|</th>
                 <td>@bicycle.Frame</td>
-                <th>|</th>
                 <td>@bicycle.Color</td>
-                <th>|</th>
                 <td>@bicycle.YearOfIssue</td>
-                <th>|</th>
                 <td>@bicycle.Saddle</td>
+                <td><a class="btn btn-outline-dark px-4" href="~/Home/Buy/@bicycle.Id">Buy</a></td>
             </tr>
         }
     </tbody>
 </table>
+<input type="hidden" id="IsOrderSuccess" value="@ViewBag.IsOrderSuccess" />
+<script type="text/javascript" src="~/js/index.js"></script>
