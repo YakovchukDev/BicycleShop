@@ -43,8 +43,8 @@
     </tbody>
 </table>
 <form method="get" class="btn-group d-flex align-content-center">
-    @for (int i = 1; i <= ViewBag.Count / 10 + 1; i++)
+    @for (int i = 1; i <= ViewBag.Count / ViewBag.PageSize + 1; i++)
     {
-        <input type="submit" class="btn btn-outline-dark" name="page" value="@i"/>
+        <input type="submit" class="btn btn-dark" name="page" value="@i"/>
     }
 </form>

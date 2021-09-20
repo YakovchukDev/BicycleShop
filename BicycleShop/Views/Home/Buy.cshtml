@@ -1,28 +1,30 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model BicycleShop.Models.Order
 @{
 }
 <form method="post">
-    <input type="hidden" name="Id" value="" />
-    <div class="input-group mb-3">
+    <input type="hidden" name="Id" value="0" />
+    <div class="input-group mt-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Your name:</span>
-        <input type="text" class="form-control" name="Name" placeholder="Ivan" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input type="text" class="form-control" name="Name" value="@Model.Name" placeholder="Ivan" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
-    <div class="input-group mb-3">
+    @Html.ValidationMessage("Name")
+    <div class="input-group mt-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Your lastname:</span>
-        <input type="text" class="form-control" name="Lastname" placeholder="Ivanov" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input type="text" class="form-control" name="Lastname" value="@Model.Lastname" placeholder="Ivanov" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
-    <div class="input-group mb-3">
+    @Html.ValidationMessage("Lastname")
+    <div class="input-group mt-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Your email:</span>
-        <input type="email" class="form-control" name="EmailAdress" placeholder="name@gmail.com" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input type="email" class="form-control" name="EmailAddress" value="@Model.EmailAddress" placeholder="name@gmail.com" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
-    <div class="input-group mb-3">
+    @Html.ValidationMessage("EmailAddress")
+    <div class="input-group mt-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Your contact phone:</span>
-        <input type="text" class="form-control" name="ContactPhone" placeholder="+380123456789" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input type="text" class="form-control" name="ContactPhone" value="@Model.ContactPhone" placeholder="+380123456789" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
+    @Html.ValidationMessage("ContactPhone")
     <input type="hidden" name="BicycleId" value="@ViewBag.Id" />
-    <div class="d-flex justify-content-between">
+    <div class="d-flex justify-content-between mt-3">
         <a class="btn btn-outline-danger px-5" href="~/Home/Index">Back</a>
         <button class="btn btn-outline-success px-5" type="submit">Enter</button>
     </div>
