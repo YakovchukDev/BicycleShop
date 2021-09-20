@@ -1,0 +1,50 @@
+﻿@model IEnumerable<BicycleShop.Models.Bicycle>
+@{
+}
+
+<a class="btn btn-dark d-flex justify-content-center text-white" href="~/Admin/Add">Add product</a>
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th class="table-dark" scope="col">Title</th>
+            <th class="table-dark" scope="col">Brand</th>
+            <th class="table-dark" scope="col">Price</th>
+            <th class="table-dark" scope="col">Class</th>
+            <th class="table-dark" scope="col">Wheels</th>
+            <th class="table-dark" scope="col">Frame</th>
+            <th class="table-dark" scope="col">Color</th>
+            <th class="table-dark" scope="col">Year of issue</th>
+            <th class="table-dark" scope="col">Saddle</th>
+            <th class="table-dark" scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var bicycle in Model)
+        {
+        <tr>
+            <td>@bicycle.Title</td>
+            <td>@bicycle.Brand</td>
+            <td>@bicycle.Price</td>
+            <td>@bicycle.Class</td>
+            <td>@bicycle.Wheels</td>
+            <td>@bicycle.Frame</td>
+            <td>@bicycle.Color</td>
+            <td>@bicycle.YearOfIssue</td>
+            <td>@bicycle.Saddle</td>
+            <td class="d-flex">
+                <a class="btn btn-outline-dark px-4 mx-1" href="~/Admin/Edit/@bicycle.Id">Edit</a>
+                <form action="~/Admin/Delete" method="post">
+                    <input type="hidden" name="id" value="@bicycle.Id" />
+                    <input class="btn btn-outline-dark px-4 mx-1" type="submit" value="Delete"/>
+                </form>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<form method="get" class="btn-group d-flex align-content-center">
+    @for (int i = 1; i <= ViewBag.Count / 10 + 1; i++)
+    {
+        <input type="submit" class="btn btn-outline-dark" name="page" value="@i"/>
+    }
+</form>

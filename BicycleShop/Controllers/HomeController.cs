@@ -21,9 +21,26 @@ namespace BicycleShop.Controllers
             ViewBag.IsOrderSuccess = "No";
         }
 
-        public IActionResult Index()
+        [HttpGet]
+        public IActionResult Index(int? page)
         {
-            return View(context.Bicycles.ToList());
+            ViewBag.Count = context.Bicycles.ToList().Count;
+            var pageSize = 10;
+            if (page == null)
+            {
+                return View(context.Bicycles
+                    .Skip(0)
+                    .Take(pageSize)
+                    .ToList());
+            }
+            else
+            {
+                return View(context.Bicycles
+                    .Skip((int)((page - 1) * pageSize))
+                    .Take(pageSize)
+                    .ToList());
+            }
+
         }
 
         [HttpGet]
@@ -68,11 +85,6 @@ namespace BicycleShop.Controllers
 
             ViewBag.IsOrderSuccess = "Yes";
             return RedirectToAction("Index");
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
