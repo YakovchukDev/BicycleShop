@@ -77,3 +77,7 @@ B:\Програмирувание\Шаг\ASPNET\MVC\Homeworks\BicycleShop\Bicycl
 B:\Програмирувание\Шаг\ASPNET\MVC\Homeworks\BicycleShop\BicycleShop\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Index.cshtml.g.cs
 B:\Програмирувание\Шаг\ASPNET\MVC\Homeworks\BicycleShop\BicycleShop\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Add.cshtml.g.cs
 B:\Програмирувание\Шаг\ASPNET\MVC\Homeworks\BicycleShop\BicycleShop\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Edit.cshtml.g.cs
+B:\Програмирувание\Шаг\ASPNET\MVC\Homeworks\BicycleShop\BicycleShop\obj\Debug\netcoreapp3.1\Razor\Views\Cart\AddToCart.cshtml.g.cs
+B:\Програмирувание\Шаг\ASPNET\MVC\Homeworks\BicycleShop\BicycleShop\bin\Debug\netcoreapp3.1\MailChimp.Net.dll
+B:\Програмирувание\Шаг\ASPNET\MVC\Homeworks\BicycleShop\BicycleShop\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Http.dll
+B:\Програмирувание\Шаг\ASPNET\MVC\Homeworks\BicycleShop\BicycleShop\obj\Debug\netcoreapp3.1\Razor\Views\Cart\Index.cshtml.g.cs

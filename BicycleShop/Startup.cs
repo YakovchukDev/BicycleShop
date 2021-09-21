@@ -28,6 +28,8 @@ namespace BicycleShop
             string connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<BicycleContext>(options => options.UseSqlServer(connection));
             services.AddControllersWithViews();
+            services.AddDistributedMemoryCache();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +49,8 @@ namespace BicycleShop
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseSession();
 
             app.UseAuthorization();
 

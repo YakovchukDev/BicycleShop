@@ -1,0 +1,36 @@
+﻿@model IEnumerable<BicycleShop.Models.Product>
+@{
+}
+
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th class="table-dark" scope="col">Title</th>
+            <th class="table-dark" scope="col">Quantity</th>
+            <th class="table-dark" scope="col">Change</th>
+            <th class="table-dark" scope="col">Remove</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Bicycle.Title</td>
+                <td>@product.Quantity</td>
+                <td>
+                    <form action="~Cart/ChangeProduct" method="post" class="d-flex">
+                        <input type="hidden" name="id" value="@product.Bicycle.Id"/>
+                        <input type="number" class="form-control" name="quantity" />
+                        <button class="btn btn-outline-dark" type="submit"></button>
+                    </form>
+                </td>
+                <td>
+                    <form action="~/Cart/RemoveFromCart" method="post">
+                        <input type="hidden" name="id" value="@product.Bicycle.Id"/>
+                        <button class="btn btn-outline-dark" type="submit"></button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

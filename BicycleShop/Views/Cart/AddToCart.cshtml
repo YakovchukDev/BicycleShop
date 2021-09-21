@@ -1,0 +1,22 @@
+﻿@model BicycleShop.Models.Product
+@{
+}
+
+<div class="d-flex justify-content-center align-items-center">
+    <form method="post">
+        <div class="input-group mt-3">
+            <span class="input-group-text form-control" id="inputGroup-sizing-default">@Model.Bicycle.Title</span>
+            <span class="input-group-text" id="inputGroup-sizing-default">@Model.Bicycle.Price</span>
+            <input type="hidden" name="id" value="@Model.Bicycle.Id" />
+        </div>
+        <div class="input-group mt-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Your lastname:</span>
+            <input type="text" class="form-control" name="quantity" value="@Model.Quantity" placeholder="Ivanov" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        @Html.ValidationMessage("Quantity")
+        <div class="d-flex justify-content-between mt-3">
+            <a class="btn btn-outline-danger px-5" href="~/Home/Index">Back</a>
+            <button class="btn btn-outline-success px-5" type="submit">Enter</button>
+        </div>
+    </form>
+</div>
